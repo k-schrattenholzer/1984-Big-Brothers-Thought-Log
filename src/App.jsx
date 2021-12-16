@@ -1,3 +1,10 @@
+import './App.css'
+import ThoughtLog from './views/ThoughtLog/ThoughtLog.jsx'
+
 export default function App() {
-  return <h1>Hello World</h1>;
+  return(
+    <div>
+      <ThoughtLog />
+    </div>
+  )
 }
