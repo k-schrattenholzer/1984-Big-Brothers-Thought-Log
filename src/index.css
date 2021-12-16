@@ -1,20 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Inconsolata&family=Redacted&family=Righteous&family=Unica+One&display=swap');
-
-:root {
-  --font-bakbak: 'Bakbak One', cursive;
-  --font-inconsolata: 'Inconsolata', monospace;
-  --font-redacted: 'Redacted', cursive;
-  --font-righteous: 'Righteous', cursive;
-  --font-unica: 'Unica One', cursive;
-  --background1: rgb(236, 225, 191);
-  --blue: rgb(72, 116, 157);
-  --accent1: rgb(58, 51, 115);
-  --accent2: rgb(139, 64, 117);
-  --orange: rgb(210, 87, 53);
-  --green: rgb(82, 138, 70);
+body {
+  display: flex;
+  justify-content: center;
 }
 
-*{
-  font-family: var(--font-righteous);
-  background-color: var(--background1);
+body > div {
+  height: 500px;
+  width: 100%;
 }
