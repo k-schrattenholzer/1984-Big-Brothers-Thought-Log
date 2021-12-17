@@ -1,8 +1,14 @@
+import Thought from './Thought.jsx';
+import './ThoughtList.css'
 
-export default function ThoughtList() {
+export default function ThoughtList({ thoughts, handleChangeThought, handleDeleteThought}) {
   return (
-    <div>
-      This is where the logged thoughts will go - after evaluation and sanitization.
-    </div>
+    <ul>
+      {thoughts.map((thought) => (
+        <li key={thought.id}>
+          <Thought thought={thought} onChange={handleChangeThought} onDelete={handleDeleteThought}/>
+        </li>
+      ))}
+    </ul>
   )
 }

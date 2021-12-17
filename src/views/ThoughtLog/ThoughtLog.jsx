@@ -5,6 +5,12 @@ import Header from '../../components/layout/Header.jsx';
 import Footer from '../../components/layout/Footer.jsx';
 import './ThoughtLog.css';
 
+const initialThoughts = [
+  {id: 0, text: 'I would like to cry near a lighthouse', resolved: false },
+  {id: 1, text: 'Thought about licking all the crystals at the crystal shop', resolved: false },
+  {id: 2, text: 'I think lizards make the world a better place', resolved: false },
+]
+
 function thoughtsReducer(thoughts, action) {
   switch (action.type) {
     case 'add': {
@@ -12,7 +18,7 @@ function thoughtsReducer(thoughts, action) {
         ...thoughts,
         {
           id: Math.floor(Math.random() * 100),
-          thought: action.text,
+          text: action.text,
           resolved: false,
         },
       ];
@@ -21,12 +27,12 @@ function thoughtsReducer(thoughts, action) {
 }
 
 export default function ThoughtLog() {
-  const [thoughts, dispatch] = useReducer(thoughtsReducer, '');
+  const [thoughts, dispatch] = useReducer(thoughtsReducer, initialThoughts);
 
-  const handleAddThought = (thought) => {
+  const handleAddThought = (text) => {
     dispatch({
       type: 'add',
-      thought,
+      text,
     });
   };
 
