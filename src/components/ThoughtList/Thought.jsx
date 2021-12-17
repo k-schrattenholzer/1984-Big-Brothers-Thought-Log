@@ -10,6 +10,7 @@ export default function Thought({ thought, onChange, onDelete }) {
       <div>
         <input 
         type="text" 
+        placeholder={thought.text}
         onChange={(e) => {
           onChange({
             ...thought,
@@ -40,7 +41,8 @@ export default function Thought({ thought, onChange, onDelete }) {
   }
   return (
     <>
-      <input 
+      {thoughtContent}
+      <button 
         type="checkbox"
         checked={thought.resolved}
         onChange={(e) => {
@@ -49,8 +51,7 @@ export default function Thought({ thought, onChange, onDelete }) {
             resolved: e.target.checked,
           })
         }}
-      />
-      {thoughtContent}
+      >Resolve</button>
       <button
         type='button'
         onClick={() => onDelete(thought.id)}
