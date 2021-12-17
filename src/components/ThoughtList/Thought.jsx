@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './ThoughtList.css'
+import style from './ThoughtList.css'
 
 export default function Thought({ thought, onChange, onDelete }) {
   const [beingEdited, setBeingEdited] = useState(false);
@@ -12,7 +12,7 @@ export default function Thought({ thought, onChange, onDelete }) {
       <div>
         <input 
         type="text" 
-        className="EditInput"
+        className={style.EditInput}
         placeholder={thought.text}
         onChange={(e) => {
           onChange({
@@ -43,7 +43,7 @@ export default function Thought({ thought, onChange, onDelete }) {
     )
   }
   return (
-    <>
+    <div>
       {thoughtContent}
       <button 
         type="checkbox"
@@ -61,6 +61,6 @@ export default function Thought({ thought, onChange, onDelete }) {
       >
         Permanently Redact
       </button>
-    </>
+    </div>
   )
 }

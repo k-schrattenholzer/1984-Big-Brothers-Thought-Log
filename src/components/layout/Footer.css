@@ -1,0 +1,7 @@
+@import '../../App.css';
+ 
+.FooterC{
+  background-color: var(--green);
+  margin-top: .25em;
+  padding: 1em;
+}

@@ -1,7 +1,8 @@
+import style from './Header.css'
 
 export default function Header() {
   return (
-    <header className='HeaderC'>
+    <header className={style.HeaderC}>
       This is a Header
     </header>
   )

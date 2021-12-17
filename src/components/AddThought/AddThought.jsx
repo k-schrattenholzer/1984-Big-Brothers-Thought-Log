@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import style from './AddThought.css'
 
 export default function AddThought({ addThought }) {
   const [thought, setThought] = useState('');
@@ -10,8 +11,9 @@ export default function AddThought({ addThought }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={style.AddThoughtForm}>
       <input
+        className={style.AddThoughtInput}
         placeholder='Report Your Thoughts'
         value={thought}
         onChange={(e) => setThought(e.target.value)}

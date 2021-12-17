@@ -1,3 +1,26 @@
+@import '../../App.css';
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: var(--orange);
+}
+
+.ThoughtC {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  list-style-type: none;
+}
+
+.ThoughtEl {
+  
+}
+
 .EditInput {
-  width: 400px;
+  width: max-content;
 }

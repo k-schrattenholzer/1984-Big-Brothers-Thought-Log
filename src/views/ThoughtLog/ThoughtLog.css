@@ -1,11 +1,1 @@
 @import '../../app.css';
-
-header,
-footer {
-  background-color: var(--green);
-  color: var(--fontcolor1);
-}
-
-#ThoughtLog {
-  background-color: var(--accent1);
-}
