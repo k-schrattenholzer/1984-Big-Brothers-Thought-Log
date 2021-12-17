@@ -3,7 +3,7 @@ import AddThought from '../../components/AddThought/AddThought';
 import ThoughtList from '../../components/ThoughtList/ThoughtList';
 import Header from '../../components/layout/Header.jsx';
 import Footer from '../../components/layout/Footer.jsx';
-import './ThoughtLog.css';
+import style from './ThoughtLog.css';
 
 const initialThoughts = [
   { id: 0, text: 'I would like to cry near a lighthouse', resolved: false },
@@ -74,7 +74,7 @@ export default function ThoughtLog() {
   }
 
   return (
-    <div id="ThoughtLog">
+    <div className={style.ThoughtLog}>
       <Header />
       <main>
         <AddThought addThought={handleAddThought} />

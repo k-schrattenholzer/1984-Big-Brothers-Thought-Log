@@ -11,16 +11,18 @@ export default function AddThought({ addThought }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={style.AddThoughtForm}>
-      <input
-        className={style.AddThoughtInput}
-        placeholder='Report Your Thoughts'
-        value={thought}
-        onChange={(e) => setThought(e.target.value)}
-      />
-      <button 
-        type='submit'
-      >Submit for Review</button>
-    </form>
+    <div className={style.FormC}>
+      <form onSubmit={handleSubmit} className={style.AddThoughtForm}>
+        <textarea
+          className={style.AddThoughtInput}
+          placeholder='Report Your Thoughts'
+          value={thought}
+          onChange={(e) => setThought(e.target.value)}
+        />
+        <button 
+          type='submit'
+        >Submit for Review</button>
+      </form>
+    </div>
   )
 }

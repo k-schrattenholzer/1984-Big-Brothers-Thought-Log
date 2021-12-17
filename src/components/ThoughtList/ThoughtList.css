@@ -1,13 +1,5 @@
 @import '../../App.css';
 
-main {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-  background-color: var(--orange);
-}
 
 .ThoughtC {
   display: flex;
@@ -15,10 +7,12 @@ main {
   flex-wrap: wrap;
   align-items: stretch;
   list-style-type: none;
+  background-color: var(--background1);
+  padding: 10px;
 }
 
 .ThoughtEl {
-  
+  padding: 10px;
 }
 
 .EditInput {

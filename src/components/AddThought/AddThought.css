@@ -1,11 +1,21 @@
 @import '../../app.css';
 
+.FormC {
+  background-color: var(--blue);
+  border: 2px solid var(--accent2);
+  border-radius: 20px;
+
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
 .AddThoughtForm {
-  background-color: var(--accent2);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+   display: flex;
+
 }
 
 .AddThoughtInput {
+  width: 150px;
+
 }

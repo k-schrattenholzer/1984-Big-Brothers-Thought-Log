@@ -4,4 +4,5 @@
   background-color: var(--green);
   margin-bottom: .5em;
   padding: 1em;
+  border-radius: 20px;
 }

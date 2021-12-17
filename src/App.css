@@ -15,7 +15,3 @@
   --green: rgb(82, 138, 70);
 }
 
-* {
-  font-family: var(--font-righteous);
-  background-color: var(--background1);
-}
