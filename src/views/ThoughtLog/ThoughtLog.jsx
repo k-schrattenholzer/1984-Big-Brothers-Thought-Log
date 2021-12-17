@@ -6,10 +6,18 @@ import Footer from '../../components/layout/Footer.jsx';
 import './ThoughtLog.css';
 
 const initialThoughts = [
-  {id: 0, text: 'I would like to cry near a lighthouse', resolved: false },
-  {id: 1, text: 'Thought about licking all the crystals at the crystal shop', resolved: false },
-  {id: 2, text: 'I think lizards make the world a better place', resolved: false },
-]
+  { id: 0, text: 'I would like to cry near a lighthouse', resolved: false },
+  {
+    id: 1,
+    text: 'Thought about licking all the crystals at the crystal shop',
+    resolved: false,
+  },
+  {
+    id: 2,
+    text: 'I think lizards make the world a better place',
+    resolved: false,
+  },
+];
 
 function thoughtsReducer(thoughts, action) {
   switch (action.type) {
@@ -23,6 +31,21 @@ function thoughtsReducer(thoughts, action) {
         },
       ];
     }
+    case 'update': {
+      return thoughts.map((thought) => {
+        if (thought.id === action.task.id) {
+          return action.task;
+        }
+        return thought;
+      });
+    }
+    case 'delete': {
+      return thoughts.filter((thought) => thought.id !== action.id);
+    }
+    default: {
+      throw Error(`Unknown action: ${action.type}`)
+    }
+    //new cases above this line
   }
 }
 
@@ -36,12 +59,26 @@ export default function ThoughtLog() {
     });
   };
 
+  const handleUpdateThought = (task) => {
+    dispatch({
+      type: 'update',
+      task
+    })
+  }
+
+  const handleDeleteThought = (taskId) => {
+    dispatch({
+      type: 'delete',
+      id: taskId
+    })
+  }
+
   return (
     <div id="ThoughtLog">
       <Header />
       <main>
         <AddThought addThought={handleAddThought} />
-        <ThoughtList thoughts={thoughts} />
+        <ThoughtList thoughts={thoughts} handleChangeThought={handleUpdateThought} handleDeleteThought={handleDeleteThought} />
       </main>
       <Footer />
     </div>

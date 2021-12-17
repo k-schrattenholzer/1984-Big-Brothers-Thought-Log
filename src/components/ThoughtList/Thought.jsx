@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './ThoughtList.css'
 
 export default function Thought({ thought, onChange, onDelete }) {
   const [beingEdited, setBeingEdited] = useState(false);
@@ -6,15 +7,17 @@ export default function Thought({ thought, onChange, onDelete }) {
   let thoughtContent
 
   if(beingEdited) {
+
     thoughtContent = (
       <div>
         <input 
         type="text" 
+        className="EditInput"
         placeholder={thought.text}
         onChange={(e) => {
           onChange({
             ...thought,
-            thought: e.target.value,
+            text: e.target.value,
             })
           }}
         />
