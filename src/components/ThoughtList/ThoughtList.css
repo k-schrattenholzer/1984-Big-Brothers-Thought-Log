@@ -1,0 +1,20 @@
+@import '../../App.css';
+
+
+.ThoughtC {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  list-style-type: none;
+  background-color: var(--background1);
+  padding: 10px;
+}
+
+.ThoughtEl {
+  padding: 10px;
+}
+
+.EditInput {
+  width: max-content;
+}

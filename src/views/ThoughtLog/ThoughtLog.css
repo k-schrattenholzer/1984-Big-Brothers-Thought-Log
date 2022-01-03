@@ -1,0 +1,23 @@
+@import '../../App.css';
+
+
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: var(--orange);
+  border-radius: 20px;
+}
+
+button {
+  font-family: var(--font-righteous);
+}
+
+.ThoughtLog {
+  font-family: var(--font-righteous);
+
+  height: 100%;
+}
