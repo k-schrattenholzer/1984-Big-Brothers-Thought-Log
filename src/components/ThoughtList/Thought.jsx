@@ -60,6 +60,7 @@ export default function Thought({ thought, onChange, onDelete }) {
       >Resolve</button>
       <button
         type='button'
+        aria-label={`delete-${thought.id}`}
         onClick={() => onDelete(thought.id)}
       >
         Permanently Redact

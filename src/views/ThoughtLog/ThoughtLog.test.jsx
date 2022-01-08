@@ -15,10 +15,9 @@ it('should add a thought', () => {
 
   screen.getByText('I could never figure out algebra');
 
-})
+});
 
 it('should edit a thought', () => {
-
   render(
   <ThoughtLog/>);
 
@@ -37,5 +36,16 @@ it('should edit a thought', () => {
   userEvent.click(editBtn);
 
   screen.findByText('I could never figure out algebra');
+});
 
-})
+it('should delete a thought', () => {
+  render(
+  <ThoughtLog/>);
+
+  const thought = screen.findByText(/I would like to cry near a lighthouse/i);
+  const deleteBtn = screen.getByLabelText(/delete-0/i);
+
+  userEvent.click(deleteBtn);
+
+  expect(thought).toBeNull;
+});
