@@ -11,7 +11,8 @@ export default function Thought({ thought, onChange, onDelete }) {
     thoughtContent = (
       <div>
         <input 
-        type="text" 
+        type="text"
+        aria-label='edit-thought' 
         className={style.EditInput}
         placeholder={thought.text}
         onChange={(e) => {
@@ -23,6 +24,7 @@ export default function Thought({ thought, onChange, onDelete }) {
         />
         <button
           type='button'
+          aria-label='submit-edit' 
           onClick={() => setBeingEdited(false)}
         >
           Submit Changes for Review
@@ -35,6 +37,7 @@ export default function Thought({ thought, onChange, onDelete }) {
         <p>{thought.text}</p>
         <button
           type='button'
+          aria-label={`edit-btn-${thought.text}`}
           onClick={() => setBeingEdited(true)}
         >
           Modify Submission 

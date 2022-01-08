@@ -16,3 +16,26 @@ it('should add a thought', () => {
   screen.getByText('I could never figure out algebra');
 
 })
+
+it('should edit a thought', () => {
+
+  render(
+  <ThoughtLog/>);
+
+  const thought = screen.getByText(/I would like to cry near a lighthouse/i);
+  const editBtn = screen.getByLabelText(/edit-btn-I would like to cry near a lighthouse/i);
+
+  userEvent.click(editBtn);
+
+
+  const inputArea = screen.getByLabelText(/edit-thought/i);
+  const saveBtn = screen.getByText(/Submit for Review/i);
+
+  userEvent.click(saveBtn);
+
+  userEvent.type(inputArea, 'I could never figure out algebra');
+  userEvent.click(editBtn);
+
+  screen.findByText('I could never figure out algebra');
+
+})
